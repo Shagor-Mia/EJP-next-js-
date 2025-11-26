@@ -1,19 +1,19 @@
-import type { Metadata } from 'next';
-import { PT_Sans } from 'next/font/google';
-import './globals.css';
-import { Toaster } from '@/components/ui/toaster';
-import { Navbar } from '@/components/layout/Navbar';
-import { Footer } from '@/components/layout/Footer';
+import type { Metadata } from "next";
+import { PT_Sans } from "next/font/google";
+import "./globals.css";
+import { Toaster } from "@/components/ui/toaster";
+import { Navbar } from "@/components/layout/Navbar";
+import { Footer } from "@/components/layout/Footer";
 
 export const metadata: Metadata = {
-  title: 'EventFlow',
-  description: 'Discover and manage your events with ease.',
+  title: "EventFlow",
+  description: "Discover and manage your events with ease.",
 };
 
 const ptSans = PT_Sans({
-  subsets: ['latin'],
-  weight: ['400', '700'],
-  variable: '--font-pt-sans',
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  variable: "--font-pt-sans",
 });
 
 export default function RootLayout({
@@ -25,10 +25,20 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+          rel="stylesheet"
+        />
       </head>
-      <body className={`${ptSans.variable} font-body antialiased flex flex-col min-h-screen`}>
+      <body
+        suppressHydrationWarning={true}
+        className={`${ptSans.variable} font-body antialiased flex flex-col min-h-screen`}
+      >
         <Navbar />
         <main className="flex-grow">{children}</main>
         <Footer />

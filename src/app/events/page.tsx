@@ -7,13 +7,13 @@ import { Skeleton } from "@/components/ui/skeleton";
 export default async function EventsPage({
   searchParams,
 }: {
-  searchParams?: {
-    query?: string;
-    category?: string;
-  };
+  searchParams: Promise<{ query?: string; category?: string }>;
 }) {
-  const query = searchParams?.query || "";
-  const category = searchParams?.category || "";
+  const params = await searchParams; // ⬅️ required in Next.js 15+
+
+  const query = params?.query ?? "";
+  const category = params?.category ?? "";
+
   const events = await getEvents(query, category);
   const categories = await getEventCategories();
 
@@ -25,7 +25,9 @@ export default async function EventsPage({
           Find your next experience.
         </p>
       </div>
+
       <EventSearch categories={categories} />
+
       <Suspense fallback={<EventListSkeleton />}>
         <EventList events={events} />
       </Suspense>
@@ -35,7 +37,7 @@ export default async function EventsPage({
 
 function EventListSkeleton() {
   return (
-     <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 mt-8">
+    <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 mt-8">
       {Array.from({ length: 6 }).map((_, i) => (
         <div key={i} className="flex flex-col space-y-3">
           <Skeleton className="h-[225px] w-full rounded-xl" />
@@ -46,5 +48,5 @@ function EventListSkeleton() {
         </div>
       ))}
     </div>
-  )
+  );
 }
