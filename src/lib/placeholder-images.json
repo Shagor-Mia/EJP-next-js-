@@ -1,3 +1,40 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "concert",
+      "description": "A lively concert with a cheering crowd.",
+      "imageUrl": "https://images.unsplash.com/photo-1631061434620-db65394197e2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjb25jZXJ0JTIwbXVzaWN8ZW58MHx8fHwxNzY0MDYzMjI2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "concert music"
+    },
+    {
+      "id": "conference",
+      "description": "A professional conference with attendees networking.",
+      "imageUrl": "https://images.unsplash.com/photo-1661334171123-de55a112427c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxjb25mZXJlbmNlJTIwYnVzaW5lc3N8ZW58MHx8fHwxNzY0MTUzNDE1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "conference business"
+    },
+    {
+      "id": "workshop",
+      "description": "A creative workshop with hands-on activities.",
+      "imageUrl": "https://images.unsplash.com/photo-1576153192281-d558108925bb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHx3b3Jrc2hvcCUyMGNyZWF0aXZlfGVufDB8fHx8MTc2NDE1MzQxNXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "workshop creative"
+    },
+    {
+      "id": "meetup",
+      "description": "A casual tech meetup in a modern office.",
+      "imageUrl": "https://images.unsplash.com/photo-1660616246406-ff67f6b53c74?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxtZWV0dXAlMjB0ZWNobm9sb2d5fGVufDB8fHx8MTc2NDE1MzQxNXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "meetup technology"
+    },
+    {
+      "id": "gala",
+      "description": "An elegant gala dinner with formal attire.",
+      "imageUrl": "https://images.unsplash.com/photo-1763429491276-1df47d99f601?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxnYWxhJTIwZm9ybWFsfGVufDB8fHx8MTc2NDE1MzQxNXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "gala formal"
+    },
+    {
+      "id": "webinar",
+      "description": "An online webinar with a speaker on screen.",
+      "imageUrl": "https://images.unsplash.com/photo-1637065463674-4595b7f32adc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHx3ZWJpbmFyJTIwb25saW5lfGVufDB8fHx8MTc2NDE1MzQxNXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "webinar online"
+    }
+  ]
 }
