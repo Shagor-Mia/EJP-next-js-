@@ -18,7 +18,7 @@ function GoogleIcon() {
       width="24px"
       height="24px"
     >
-      {/* ...svg... */}
+      {/* ...your svg paths... */}
     </svg>
   );
 }
@@ -32,37 +32,45 @@ export function LoginForm() {
       toast({
         variant: "destructive",
         title: "Login Failed",
-        description: state.error,
+        description:
+          typeof state.error === "string"
+            ? state.error
+            : "Please check your inputs.",
       });
     }
   }, [state, toast]);
 
   return (
-    <form action={dispatch} className="space-y-4">
-      <div className="space-y-2">
-        <Label htmlFor="email">Email</Label>
-        <Input
-          id="email"
-          name="email"
-          type="email"
-          placeholder="m@example.com"
-          required
-        />
-      </div>
+    <div className="space-y-4">
+      {/* Email/password login form */}
+      <form action={dispatch} className="space-y-4">
+        <div className="space-y-2">
+          <Label htmlFor="email">Email</Label>
+          <Input
+            id="email"
+            name="email"
+            type="email"
+            placeholder="m@example.com"
+            required
+          />
+        </div>
 
-      <div className="space-y-2">
-        <Label htmlFor="password">Password</Label>
-        <Input id="password" name="password" type="password" required />
-      </div>
+        <div className="space-y-2">
+          <Label htmlFor="password">Password</Label>
+          <Input id="password" name="password" type="password" required />
+        </div>
 
-      <Button type="submit" className="w-full">
-        Sign In
-      </Button>
+        <Button type="submit" className="w-full">
+          Sign In
+        </Button>
+      </form>
 
       <Separator className="my-4" />
 
+      {/* Google login button - separate from form */}
       <Button
-        formAction={signInWithGoogle}
+        type="button" // important: prevents form validation
+        onClick={() => signInWithGoogle()}
         variant="outline"
         className="w-full"
       >
@@ -76,6 +84,6 @@ export function LoginForm() {
           Sign up
         </Link>
       </div>
-    </form>
+    </div>
   );
 }
