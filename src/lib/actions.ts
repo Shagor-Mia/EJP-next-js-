@@ -118,20 +118,23 @@ export type EventState = {
   message?: string | null;
 };
 
-export async function addEvent(prevState: EventState, formData: FormData) {
+export async function addEvent(
+  prevState: EventState,
+  formData: FormData
+): Promise<EventState> {
   const session = await auth();
   if (!session?.user?.id) {
     return { message: "Authentication required." };
   }
 
   const validatedFields = EventSchema.safeParse({
-    title: formData.get("title"),
-    description: formData.get("description"),
-    price: formData.get("price"),
-    date: formData.get("date"),
-    priority: formData.get("priority"),
-    category: formData.get("category"),
-    imageUrl: formData.get("imageUrl"),
+    title: formData.get("title")?.toString() ?? "",
+    description: formData.get("description")?.toString() ?? "",
+    price: Number(formData.get("price") ?? 0), // ensure it's a number
+    date: formData.get("date")?.toString() ?? "",
+    priority: formData.get("priority")?.toString() ?? "Medium",
+    category: formData.get("category")?.toString() ?? "",
+    imageUrl: formData.get("imageUrl")?.toString() ?? "",
   });
 
   if (!validatedFields.success) {
